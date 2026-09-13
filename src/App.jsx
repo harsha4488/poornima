@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 
 const mapsUrl =
-  "https://www.google.com/maps/dir//MAMTA+DEPARTMENTAL+STORES,+%2310,+1st+Main+Rd,+Vijaya+Nagar+II+Stage,+RPC+Layout,+Vijayanagar,+Bengaluru,+Karnataka+560104/@12.9613905,77.5388665,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3bae3fbd74a9dc51:0x6fa4cb0c007a0243!2m2!1d77.542597!2d12.9670842!3e0?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D";
+  "https://www.google.com/maps/dir//Poornima+Jewellers,+1st+Main+Rd,+Hosahalli+Extension,+Vijayanagar,+Bengaluru,+Karnataka+560104/@12.96662,77.467714,13z/data=!4m18!1m8!3m7!1s0x3bae3de191a1beed:0xe02a9c7ef2fda275!2sPoornima+Jewellers!8m2!3d12.96662!4d77.5439317!15sChxQb29ybmltYSBKZXdlbGxlcnMgQmVuZ2FsdXJ1kgENamV3ZWxyeV9zdG9yZeABAA!16s%2Fg%2F12607v9ld!4m8!1m0!1m5!1m1!1s0x3bae3de191a1beed:0xe02a9c7ef2fda275!2m2!1d77.5439317!2d12.96662!3e0?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D";
 
 const instagramUrl =
   "https://www.instagram.com/popular/poornima-jewellers-vijayanagar/";
 
 const phoneNumber = "+919000000000";
 const whatsappNumber = "919000000000";
+
+const address =
+  "#10, 1st Main Rd, Hosahalli Extension, Vijayanagar, Bengaluru, Karnataka 560104";
 
 const heroImages = [
   "https://images.unsplash.com/photo-1786052338245-f64eb727c37c?auto=format&fit=crop&fm=jpg&q=90&w=2400",
@@ -436,7 +439,7 @@ Message: ${form.message}`;
 
 function Contact() {
   return (
-    <section className="section wrap contact">
+    <section className="section wrap contact" id="contact">
       <div>
         <small className="eyebrow">VISIT US</small>
 
@@ -445,11 +448,7 @@ function Contact() {
         <p>
           <strong>Showroom Address:</strong>
           <br />
-          #10, 1st Main Rd, Vijaya Nagar II Stage,
-          <br />
-          RPC Layout, Vijayanagar,
-          <br />
-          Bengaluru, Karnataka 560104
+          {address}
         </p>
       </div>
 
@@ -496,7 +495,7 @@ function Footer() {
   return (
     <footer>
       <div className="wrap">
-        <b>Poornima Jewellers</b>
+        <h3>Poornima Jewellers</h3>
 
         <p>
           Timeless jewellery for celebrations,
@@ -513,9 +512,7 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            #10, 1st Main Rd, Vijaya Nagar II Stage,
-            RPC Layout, Vijayanagar, Bengaluru,
-            Karnataka 560104
+            {address}
           </a>
         </p>
 
