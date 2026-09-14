@@ -250,7 +250,7 @@ function App() {
           <div className="visit-copy">
             <span className="kicker">VISIT POORNIMA</span>
             <h2>Your next favourite piece is waiting.</h2>
-            <p>#10, 1st Main Rd, Hosahalli Extension, Vijayanagar, Bengaluru, Karnataka 560104</p>
+            <p>#28, Binny layout, 1st Main Rd, Vijayanagar, club road, Bengaluru, Karnataka 560040</p>
             <a
               className="btn gold"
               href="https://www.google.com/maps/dir//Poornima+Jewellers,+1st+Main+Rd,+Hosahalli+Extension,+Vijayanagar,+Bengaluru,+Karnataka+560104/"
