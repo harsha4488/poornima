@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/app/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+
+  <meta
+    name="description"
+    content="Poornima Jewellers - Premium gold, diamond, silver and bridal jewellery."
+  >
+
+  <meta name="theme-color" content="#0b0805">
+
+  <title>Poornima Jewellers</title>
+
+  <!-- iOS / PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Poornima Jewellers">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- App icons -->
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b0805;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #loading {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(174, 125, 40, 0.12),
+          transparent 38%
+        ),
+        #0b0805;
+      color: #f4dfac;
+    }
+
+    .loading-logo {
+      width: 82px;
+      height: 82px;
+      border: 1px solid rgba(214, 169, 79, 0.75);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 32px;
+      color: #d6a94f;
+    }
+
+    .loading-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .loading-subtitle {
+      margin-top: 8px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      opacity: 0.65;
+      text-transform: uppercase;
+    }
+
+    .loader {
+      width: 34px;
+      height: 34px;
+      margin-top: 26px;
+      border: 2px solid rgba(214, 169, 79, 0.18);
+      border-top-color: #d6a94f;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    #flutter_target {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="loading">
+    <div class="loading-logo">✦</div>
+
+    <div class="loading-title">
+      Poornima
+    </div>
+
+    <div class="loading-subtitle">
+      Jewellers
+    </div>
+
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        const loader = document.getElementById("loading");
+
+        if (loader) {
+          loader.style.transition = "opacity 0.35s ease";
+          loader.style.opacity = "0";
+
+          setTimeout(function () {
+            if (loader) {
+              loader.remove();
+            }
+          }, 400);
+        }
+      }, 700);
+    });
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+
+</body>
+</html>
