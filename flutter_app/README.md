@@ -1,17 +1,35 @@
-# poornima_app
+# Poornima Jewellers Flutter App
 
-A new Flutter project.
+Premium dark/gold vertical app experience for Poornima Jewellers.
 
-## Getting Started
+## Current Bengaluru reference rates shown in the app
 
-This project is a starting point for a Flutter application.
+As checked on 16 September 2026:
 
-A few resources to get you started if this is your first Flutter project:
+- 24K gold: ₹15,317/g
+- 22K gold: ₹14,040/g
+- 18K gold: ₹11,488/g
+- Silver: ₹245/g
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+These are indicative market reference rates, not Poornima showroom quotes. Verify showroom pricing before publishing as an official rate card.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run locally
+
+```bash
+flutter pub get
+flutter run -d chrome
+```
+
+## Build for `poornimajewellers.com/app/`
+
+```bash
+flutter clean
+flutter pub get
+flutter build web --base-href /app/
+```
+
+The output is in `build/web/`. Deploy that folder under the `/app/` path of the website host.
+
+## Important
+
+The app uses the supplied Poornima logo mark and the Poornima jewellery image set included in `assets/images`.
