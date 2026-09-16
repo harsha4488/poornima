@@ -1,4 +1,4 @@
-name: Deploy Poornima Website
+name: Deploy Poornima
 
 on:
   push:
@@ -21,10 +21,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
@@ -32,31 +32,28 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: 'stable'
           channel: stable
 
-      - name: Install React dependencies
-        run: npm ci
-
-      - name: Build React website
-        run: npm run build
-
-      - name: Install Flutter dependencies
+      - name: Build Flutter app
         working-directory: flutter_app
-        run: flutter pub get
-
-      - name: Build Flutter web app
-        working-directory: flutter_app
-        run: flutter build web --release --base-href /app/
-
-      - name: Copy Flutter app into React build
         run: |
-          mkdir -p dist/app
-          cp -R flutter_app/build/web/. dist/app/
+          flutter pub get
+          flutter build web --release --base-href /app/
+
+      - name: Copy Flutter app to /app
+        run: |
+          rm -rf public/app
+          mkdir -p public/app
+          cp -R flutter_app/build/web/. public/app/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: .
 
   deploy:
     needs: build
