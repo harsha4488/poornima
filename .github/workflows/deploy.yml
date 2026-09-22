@@ -1,0 +1,76 @@
+name: Deploy Poornima
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.4'
+          channel: stable
+          cache: true
+
+      - name: Install website dependencies
+        run: npm ci
+
+      - name: Build main website
+        run: npm run build
+
+      - name: Build Flutter app
+        working-directory: flutter_app
+        run: |
+          flutter pub get
+          flutter build web --release --base-href /app/
+
+      - name: Add Flutter app to website
+        run: |
+          rm -rf dist/app
+          mkdir -p dist/app
+          cp -R flutter_app/build/web/. dist/app/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

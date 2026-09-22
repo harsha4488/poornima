@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#120d09" />
+  <meta name="description" content="Poornima Jewellers — a premium mobile jewellery experience." />
+  <title>Poornima Jewellers · App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#100b08;--panel:#17100c;--panel2:#21150f;--gold:#e5b85b;--gold2:#f7d987;--cream:#f7eddc;--muted:#b9a892;--line:rgba(229,184,91,.22);--wine:#3c1717;--green:#18261d;--shadow:0 20px 55px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 20% 0%,#2a170e 0,#100b08 35%,#0c0806 100%);color:var(--cream);font-family:'DM Sans',sans-serif}a{text-decoration:none;color:inherit}button{font:inherit;color:inherit}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background:#3a281a;border-radius:999px}
+    .app{min-height:100vh;max-width:1420px;margin:0 auto;position:relative;overflow-x:hidden;padding-bottom:100px}.shell{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,rgba(16,11,8,.97),rgba(16,11,8,.85));backdrop-filter:blur(18px);border-bottom:1px solid rgba(229,184,91,.12)}.top{height:78px;display:flex;align-items:center;gap:18px}.menu{width:46px;height:46px;border:1px solid var(--line);border-radius:15px;background:#1a120d;display:grid;place-items:center;cursor:pointer}.hamb{width:20px;height:14px;display:grid;gap:4px}.hamb span{height:2px;background:var(--gold2);border-radius:10px}.brand{display:flex;align-items:center;gap:11px;flex:1}.mark{width:45px;height:50px;position:relative}.mark:before,.mark:after{content:"";position:absolute;bottom:2px;border-radius:50% 50% 8% 8%;transform:skew(-7deg)}.mark:before{left:7px;width:15px;height:43px;background:linear-gradient(#eecb7b,#aa6a1b);clip-path:polygon(48% 0,100% 25%,73% 100%,23% 100%,0 39%)}.mark:after{right:4px;width:13px;height:47px;background:linear-gradient(#dad9d3,#6f655d);clip-path:polygon(48% 0,95% 31%,77% 100%,25% 100%,0 44%)}.dot{position:absolute;width:9px;height:9px;background:#d12724;border-radius:50%;left:19px;top:0}.wordmark strong{display:block;font-family:'Playfair Display',serif;font-weight:600;letter-spacing:.02em;font-size:24px;line-height:1}.wordmark span{display:block;color:var(--muted);font-size:9px;letter-spacing:.36em;margin-top:5px}.actions{display:flex;gap:10px}.icon-btn{width:44px;height:44px;border-radius:14px;border:1px solid var(--line);background:#1a120d;display:grid;place-items:center;font-size:18px;cursor:pointer}.searchbar{display:flex;align-items:center;gap:12px;padding:12px 15px;border:1px solid var(--line);background:#170f0b;border-radius:16px;margin:0 0 14px}.searchbar input{flex:1;border:0;outline:none;background:transparent;color:var(--cream);font:500 14px 'DM Sans',sans-serif}.searchbar input::placeholder{color:#8f7d68}
+    main{padding-top:15px}.quick{display:flex;gap:14px;overflow:auto;padding:2px 0 8px;scrollbar-width:none}.quick::-webkit-scrollbar{display:none}.quick-item{min-width:84px;display:grid;justify-items:center;gap:7px;font-size:11px;color:#ddcfbd}.circle{width:66px;height:66px;border-radius:50%;border:1px solid var(--line);padding:3px;background:radial-gradient(circle at 35% 25%,#3c2a1a,#130d09);overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.03)}.circle img{width:100%;height:100%;object-fit:cover;border-radius:50%}.circle.more{display:grid;place-items:center;font-size:23px;color:var(--gold2)}
+    .hero{margin-top:10px;position:relative;border:1px solid var(--line);border-radius:28px;overflow:hidden;min-height:470px;box-shadow:var(--shadow);background:#1a100b}.hero-track{display:flex;width:100%;height:470px;transition:transform .65s cubic-bezier(.2,.8,.2,1)}.hero-slide{min-width:100%;position:relative}.hero-slide img{width:100%;height:100%;object-fit:cover;filter:saturate(.98) contrast(1.03)}.hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,7,5,.9) 0%,rgba(10,7,5,.54) 42%,rgba(10,7,5,.1) 78%,rgba(10,7,5,.2) 100%),linear-gradient(0deg,rgba(10,7,5,.45),transparent 45%)}.hero-copy{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:42px clamp(26px,6vw,80px);max-width:690px}.eyebrow{font-size:10px;letter-spacing:.36em;color:var(--gold2);font-weight:700}.hero h1{font:600 clamp(44px,7vw,76px)/.98 'Playfair Display',serif;margin:14px 0 16px;letter-spacing:-.03em}.hero h1 em{color:var(--gold2);font-weight:500}.hero p{max-width:520px;color:#dccbb6;line-height:1.65;margin:0 0 25px;font-size:15px}.btns{display:flex;gap:11px;flex-wrap:wrap}.primary,.secondary{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;font-weight:700;font-size:13px}.primary{background:linear-gradient(135deg,#f2ce75,#c58c2d);color:#23150a;box-shadow:0 10px 28px rgba(207,150,52,.2)}.secondary{border:1px solid rgba(247,217,135,.38);background:rgba(20,12,8,.38);color:var(--cream)}.pager{position:absolute;z-index:3;bottom:18px;left:26px;display:flex;gap:8px}.bullet{width:8px;height:8px;border-radius:50%;border:0;background:#7a6a56;padding:0;cursor:pointer}.bullet.active{width:24px;border-radius:20px;background:var(--gold2)}.hero-stat{position:absolute;right:24px;bottom:20px;z-index:3;display:flex;gap:10px}.stat-chip{padding:10px 13px;border:1px solid rgba(247,217,135,.25);background:rgba(20,12,8,.58);backdrop-filter:blur(12px);border-radius:13px;font-size:11px;color:#d9c8b2}.stat-chip b{color:var(--gold2);display:block;margin-bottom:3px}
+    .section{padding:34px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:16px}.title{font:600 31px/1.1 'Playfair Display',serif;margin:4px 0}.sub{color:var(--muted);font-size:13px}.link{color:var(--gold2);font-size:13px;font-weight:700}.rates{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:12px;overflow:auto}.rate{min-height:155px;border:1px solid var(--line);border-radius:20px;padding:18px;background:linear-gradient(150deg,#24170e,#130d09);box-shadow:inset 0 1px rgba(255,255,255,.03)}.rate:nth-child(2){background:linear-gradient(150deg,#321815,#140c09)}.rate:nth-child(3){background:linear-gradient(150deg,#17221a,#0d1210)}.rate:nth-child(4){background:linear-gradient(150deg,#211e22,#0d0c0d)}.metal-icon{font-size:27px;margin-bottom:16px}.rate h3{font:500 15px 'Playfair Display',serif;margin:0;color:#f6e9d1}.rate p{margin:8px 0 3px;font-weight:700;color:var(--gold2)}.rate small{color:#9f8d76}.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}.tool{padding:18px;border-radius:18px;border:1px solid rgba(247,217,135,.16);min-height:128px;position:relative;overflow:hidden}.tool:nth-child(1){background:linear-gradient(135deg,#2e2114,#15100b)}.tool:nth-child(2){background:linear-gradient(135deg,#311714,#15100b)}.tool:nth-child(3){background:linear-gradient(135deg,#11211a,#0e110f)}.tool:nth-child(4){background:linear-gradient(135deg,#211426,#110c12)}.tool .emoji{font-size:31px;position:absolute;right:16px;bottom:12px;filter:drop-shadow(0 10px 12px rgba(0,0,0,.4))}.tool strong{display:block;max-width:150px;font-family:'Playfair Display',serif;font-size:19px}.tool span{display:block;color:#bba991;font-size:12px;margin-top:7px;max-width:160px;line-height:1.45}.rail{display:flex;gap:14px;overflow:auto;scroll-snap-type:x mandatory;padding:6px 1px 10px;scrollbar-width:none}.rail::-webkit-scrollbar{display:none}.product{min-width:235px;scroll-snap-align:start;background:linear-gradient(160deg,#1b130f,#0f0b08);border:1px solid rgba(247,217,135,.18);border-radius:20px;padding:9px;position:relative;overflow:hidden}.product img{width:100%;height:252px;object-fit:cover;border-radius:15px;background:#251a13}.heart{position:absolute;right:18px;top:18px;width:35px;height:35px;border-radius:50%;border:1px solid rgba(247,217,135,.4);background:rgba(12,8,6,.62);display:grid;place-items:center;cursor:pointer}.heart.active{color:#e85b62}.pbody{padding:11px 6px 5px}.pbody small{color:#a8957d}.pbody strong{display:block;font-size:15px;margin:5px 0}.price{color:var(--gold2);font-weight:700}.badge{position:absolute;left:17px;bottom:17px;padding:5px 8px;background:#f0cb70;color:#26170b;border-radius:999px;font-size:9px;font-weight:800}.feature-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}.feature{border:1px solid var(--line);border-radius:24px;overflow:hidden;min-height:320px;position:relative}.feature img{width:100%;height:100%;object-fit:cover}.feature:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,7,5,.82),rgba(10,7,5,.1) 65%)}.feature-copy{position:absolute;z-index:2;left:24px;top:24px;max-width:310px}.feature-copy h3{font:600 31px/1.02 'Playfair Display',serif;margin:7px 0}.feature-copy p{color:#dbcbb4;line-height:1.55;font-size:13px}.contact{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}.contact-card{background:linear-gradient(150deg,#21150f,#120c08);border:1px solid var(--line);border-radius:24px;padding:26px}.contact-card h3{font:600 30px/1.08 'Playfair Display',serif;margin:6px 0 12px}.contact-info{display:grid;gap:12px;margin-top:18px}.info{padding:13px;border-radius:15px;border:1px solid rgba(247,217,135,.12);background:#17100c}.info small{display:block;color:#9d8b74;margin-bottom:5px;letter-spacing:.13em}.info a,.info p{margin:0;font-size:14px;color:#f0e2cd}.footer{border-top:1px solid rgba(247,217,135,.1);padding:30px 0;color:#8e7d69;font-size:11px}.bottom{position:fixed;z-index:30;bottom:0;left:50%;transform:translateX(-50%);width:min(740px,100%);padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(13,9,7,.9);backdrop-filter:blur(20px);border-top:1px solid rgba(247,217,135,.13);display:grid;grid-template-columns:repeat(5,1fr);box-shadow:0 -18px 35px rgba(0,0,0,.3)}.nav-item{display:grid;justify-items:center;gap:4px;color:#95846d;font-size:10px;padding:7px 5px;border-radius:16px}.nav-item span:first-child{font-size:20px}.nav-item.active{background:#271b13;color:var(--gold2)}.toast{position:fixed;z-index:50;right:18px;bottom:90px;background:#24170f;border:1px solid var(--line);padding:12px 15px;border-radius:13px;box-shadow:var(--shadow);font-size:12px;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:none}.drawer{position:fixed;inset:0;background:rgba(0,0,0,.68);z-index:60;display:none}.drawer.show{display:block}.drawer-panel{height:100%;width:min(370px,88%);background:#130d09;border-right:1px solid var(--line);padding:24px;box-shadow:var(--shadow)}.drawer-panel h2{font:600 28px 'Playfair Display',serif;margin:25px 0}.drawer-links{display:grid;gap:7px}.drawer-links a{padding:13px 0;border-bottom:1px solid rgba(247,217,135,.1);color:#e8dcc9}
+    @media(max-width:900px){.shell{width:min(100% - 22px,760px)}.hero{min-height:440px}.hero-track{height:440px}.hero-copy{padding:28px}.rates{grid-template-columns:repeat(4,190px)}.tools{grid-template-columns:repeat(2,1fr)}.feature-grid,.contact{grid-template-columns:1fr}.top{height:70px}.actions{gap:7px}}
+    @media(max-width:560px){.brand .wordmark span{display:none}.wordmark strong{font-size:20px}.hero{border-radius:22px}.hero-track{height:520px}.hero-copy{justify-content:flex-end;padding:22px 20px 55px}.hero h1{font-size:47px}.hero p{font-size:13px}.hero-stat{right:17px;top:17px;bottom:auto;display:grid}.stat-chip{padding:8px 10px}.section{padding:28px 0}.title{font-size:27px}.section-head{align-items:start}.section-head .link{display:none}.tools{grid-template-columns:1fr 1fr}.tool{min-height:150px}.tool strong{font-size:17px}.product{min-width:210px}.product img{height:220px}.feature-copy h3{font-size:27px}.contact-card h3{font-size:27px}}
+  
+/* SUPER APP EXPERIENCE */
+:root{--bg:#090705;--panel:#120c09;--panel2:#1b100b;--gold:#c58b32;--gold2:#f2cc79;--champ:#e8c77f;--cream:#fbf2e2;--muted:#a89680;--line:rgba(242,204,121,.18);--red:#4a1618;--green:#17241b;--shadow:0 24px 70px rgba(0,0,0,.48)}
+body{background:radial-gradient(1000px 500px at 50% -120px,#3b1e10 0,#110a07 47%,#070504 100%)}
+.app{max-width:760px;background:linear-gradient(180deg,#100b08 0,#080605 100%);box-shadow:0 0 90px rgba(0,0,0,.5)}
+.shell{width:min(100% - 24px,700px)}
+header{position:sticky;top:0;background:rgba(10,7,5,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(242,204,121,.13)}
+.top{height:72px}.brand{gap:10px}.mark{width:38px;height:44px}.wordmark strong{font-size:22px;letter-spacing:.04em}.wordmark span{font-size:8px}
+.icon-btn{width:42px;height:42px;border-radius:13px;background:linear-gradient(150deg,#24170e,#120b08)}
+.searchbar{margin-bottom:9px;background:#100b08;border-radius:15px;box-shadow:inset 0 1px rgba(255,255,255,.02)}
+.market-ticker{display:flex;gap:9px;overflow:auto;padding:4px 0 10px;scrollbar-width:none}.market-ticker::-webkit-scrollbar{display:none}.market-chip{min-width:150px;padding:11px 13px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(135deg,#1e130c,#0f0a07);position:relative}.market-chip small{display:block;color:#8f7b65;font-size:9px;letter-spacing:.12em}.market-chip b{display:block;margin-top:4px;font-size:14px;color:var(--gold2)}.market-chip em{font-style:normal;color:#73a66f;font-size:10px;float:right}
+.quick{gap:11px;padding-bottom:11px}.quick-item{min-width:73px;font-size:10px}.circle{width:59px;height:59px;box-shadow:0 7px 28px rgba(0,0,0,.22)}
+.hero{margin-top:4px;min-height:530px;border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.36)}.hero-track{height:530px}.hero-slide img{object-position:center}.hero-slide:after{background:linear-gradient(180deg,rgba(5,4,3,.08),rgba(5,4,3,.12) 36%,rgba(5,4,3,.92) 100%),linear-gradient(90deg,rgba(5,4,3,.1),rgba(5,4,3,.05))}.hero-copy{justify-content:flex-end;max-width:100%;padding:28px 25px 50px}.hero h1{font-size:54px;line-height:.94;margin:12px 0}.hero p{font-size:13px;max-width:440px;color:#eadbc6}.hero-stat{right:17px;top:17px;bottom:auto;display:flex;flex-direction:column;align-items:flex-end}.stat-chip{padding:8px 11px;border-radius:12px;font-size:10px;background:rgba(12,8,6,.58)}
+.hero-floating{position:absolute;z-index:4;left:18px;top:18px;padding:10px 12px;border-radius:999px;border:1px solid rgba(242,204,121,.26);background:rgba(10,7,5,.55);font-size:10px;letter-spacing:.16em;color:#f4ddb0}
+.section{padding:28px 0}.section-head{margin-bottom:14px}.eyebrow{font-size:9px}.title{font-size:30px}.sub{font-size:11px;line-height:1.5}
+.rates{display:grid;grid-template-columns:repeat(4,155px);gap:10px;overflow:auto;padding-bottom:2px}.rate{min-height:137px;border-radius:17px;padding:15px}.rate h3{font-size:13px}.rate p{font-size:14px}.metal-icon{font-size:23px;margin-bottom:12px}
+.tools{grid-template-columns:repeat(2,1fr);gap:10px}.tool{min-height:135px;padding:16px;border-radius:18px}.tool strong{font-size:18px}.tool span{font-size:11px}
+.rail{gap:11px}.product{min-width:202px;border-radius:18px;padding:8px}.product img{height:224px}.pbody{padding:10px 5px 3px}.pbody strong{font-size:13px}.price{font-size:12px}
+.feature-grid{grid-template-columns:1fr;gap:12px}.feature{min-height:280px;border-radius:20px}.feature-copy{left:20px;top:20px}.feature-copy h3{font-size:28px}.feature-copy p{font-size:12px}
+.contact{grid-template-columns:1fr;gap:12px}.contact-card{border-radius:20px;padding:22px}.contact-card h3{font-size:29px}.contact-info{gap:9px}.info{padding:12px}.info a,.info p{font-size:12px;line-height:1.5}
+.quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.quick-action{padding:12px 9px;border-radius:15px;border:1px solid var(--line);background:linear-gradient(145deg,#1b110b,#0e0907);text-align:center}.quick-action .qa-icon{font-size:19px}.quick-action b{display:block;margin-top:5px;font-size:10px}.quick-action span{display:block;color:#8f7d69;font-size:9px;margin-top:3px}
+.section-card{padding:16px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(145deg,#18100b,#0e0907);margin-top:10px}.section-card h3{margin:0;font:600 24px/1.05 'Playfair Display',serif}.section-card p{color:#a9967f;font-size:11px;line-height:1.55}
+.pill-row{display:flex;gap:8px;overflow:auto;scrollbar-width:none;margin-top:11px}.pill-row::-webkit-scrollbar{display:none}.pill{white-space:nowrap;padding:8px 12px;border-radius:999px;border:1px solid rgba(242,204,121,.2);font-size:10px;color:#d9c6ac;background:#130d09}.pill.active{background:linear-gradient(135deg,#f2cc79,#c18a33);color:#21150a;font-weight:800}
+.bottom{width:min(760px,100%);padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(8,6,4,.94);border-top:1px solid rgba(242,204,121,.15)}.nav-item{font-size:9px}.nav-item span:first-child{font-size:19px}
+.fab{position:fixed;right:max(18px,calc((100vw - 700px)/2 + 16px));bottom:88px;z-index:31;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f2cf7d,#b77f29);color:#24150a;font-weight:900;box-shadow:0 16px 34px rgba(0,0,0,.38);border:2px solid #2a1b10}
+.badge-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#68aa64;margin-right:5px;box-shadow:0 0 8px rgba(104,170,100,.5)}
+@media(max-width:560px){.shell{width:calc(100% - 18px)}.hero{min-height:520px}.hero-track{height:520px}.hero h1{font-size:49px}.hero-copy{padding:22px 19px 46px}.product{min-width:188px}.product img{height:206px}.rates{grid-template-columns:repeat(4,145px)}.fab{right:16px}}
+.rate-note{font-size:9px;color:#8e7b64;padding:0 2px 12px;letter-spacing:.01em}.rate-note::before{content:"LIVE EXAMPLE · ";color:#d6ad5b;font-weight:800;letter-spacing:.12em}@media(max-width:560px){.rate-note{font-size:8px;line-height:1.45}}
+.poornima-logo{width:48px;height:48px;object-fit:contain;flex:0 0 auto;border-radius:50%;background:#fff}.brand{align-items:center}.brand .poornima-logo{filter:drop-shadow(0 1px 8px rgba(0,0,0,.18))}</style>
+</head>
+<body>
+<div class="app" id="app">
+<header>
+  <div class="shell">
+    <div class="top">
+      <button class="menu" id="openMenu" aria-label="Open menu"><span class="hamb"><span></span><span></span><span></span></span></button>
+      <a href="#home" class="brand">
+        <img class="poornima-logo" src="images/poornima-logo-mark.png" alt="Poornima Jewellers logo" />
+        <div class="wordmark"><strong>POORNIMA</strong><span>JEWELLERS</span></div>
+      </a>
+      <div class="actions"><button class="icon-btn" id="notify">♧</button><button class="icon-btn" id="wishlist">♡</button><button class="icon-btn" id="bag">🛍</button></div>
+    </div>
+    <div class="searchbar"><span>⌕</span><input id="search" placeholder="Search gold, diamond, silver, jewellery…"/><span>⌗</span></div>
+    <div class="market-ticker" aria-label="today's metal rates">
+      <div class="market-chip"><small>24K GOLD · 999</small><b>₹15,408 / g <em>▼ 1</em></b><small>Today · Bengaluru · indicative</small></div>
+      <div class="market-chip"><small>22K GOLD · 916</small><b>₹14,124 / g <em>▼ 1</em></b><small>Today · Bengaluru · indicative</small></div>
+      <div class="market-chip"><small>18K GOLD · 750</small><b>₹11,556 / g <em>▼ 1</em></b><small>Today · Bengaluru · indicative</small></div>
+      <div class="market-chip"><small>SILVER · 999</small><b>₹244.90 / g <em>▼ 0.10</em></b><small>Today · Bengaluru · indicative</small></div>
+    </div>
+    <div class="rate-note">Indicative Bengaluru reference rates for 15 Sep 2026 · Gold rates do not include GST, making charges or other levies. Poornima showroom rate may differ.</div>
+  </div>
+</header>
+<main id="home">
+<div class="shell">
+  <div class="quick">
+    <a class="quick-item" href="#selection"><div class="circle"><img src="images/001.jpg"/></div><span>Gold</span></a>
+    <a class="quick-item" href="#new"><div class="circle"><img src="images/002.jpg"/></div><span>Diamond</span></a>
+    <a class="quick-item" href="#new"><div class="circle"><img src="images/003.jpg"/></div><span>Bangles</span></a>
+    <a class="quick-item" href="#new"><div class="circle"><img src="images/004.jpg"/></div><span>Tradition</span></a>
+    <a class="quick-item" href="#new"><div class="circle"><img src="images/009.jpg"/></div><span>Rings</span></a>
+    <a class="quick-item" href="#new"><div class="circle"><img src="images/010.jpg"/></div><span>Chains</span></a>
+    <a class="quick-item" href="#selection"><div class="circle more">•••</div><span>More</span></a>
+  </div>
+
+  <section class="hero" aria-label="Poornima highlights"><div class="hero-floating">POORNIMA · VIJAYANAGAR</div>
+    <div class="hero-track" id="heroTrack">
+      <div class="hero-slide"><img src="images/018.jpg" alt="Poornima signature necklace"><div class="hero-copy"><span class="eyebrow">SIGNATURE COLLECTION</span><h1>Jewellery that<br><em>feels like you.</em></h1><p>Heritage-inspired gold, diamond and bridal pieces curated for the moments that stay with you.</p><div class="btns"><a class="primary" href="#selection">Explore Collection →</a><a class="secondary" href="#contact">Enquire</a></div></div></div>
+      <div class="hero-slide"><img src="images/007.jpg" alt="Ruby jewellery collection"><div class="hero-copy"><span class="eyebrow">RICH. TIMELESS. POORNIMA.</span><h1>Tradition,<br><em>with a modern glow.</em></h1><p>Statement pieces, everyday classics and celebration jewellery, selected with care.</p><div class="btns"><a class="primary" href="#new">New Arrivals →</a><a class="secondary" href="#contact">Visit Us</a></div></div></div>
+      <div class="hero-slide"><img src="images/005.jpg" alt="Diamond ring"><div class="hero-copy"><span class="eyebrow">FOREVER PIECES</span><h1>Made for the<br><em>moments that matter.</em></h1><p>Discover elegant rings, earrings, necklaces and bangles for every chapter.</p><div class="btns"><a class="primary" href="#selection">Shop Selection →</a><a class="secondary" href="#contact">Talk to us</a></div></div></div>
+    </div>
+    <div class="pager" id="pager"><button class="bullet active"></button><button class="bullet"></button><button class="bullet"></button></div>
+    <div class="hero-stat"><div class="stat-chip"><b>TRUST</b>For generations</div><div class="stat-chip"><b>CRAFT</b>Curated with care</div></div>
+  </section>
+
+  <div class="quick-actions">
+    <a class="quick-action" href="#rates"><div class="qa-icon">✦</div><b>Today's Rates</b><span>Gold & silver</span></a>
+    <a class="quick-action" href="#contact"><div class="qa-icon">⌖</div><b>Visit Showroom</b><span>Get directions</span></a>
+    <a class="quick-action" href="https://wa.me/919999999999" target="_blank" rel="noreferrer"><div class="qa-icon">◉</div><b>WhatsApp</b><span>Quick enquiry</span></a>
+  </div>
+
+  <section class="section" id="rates"><div class="section-head"><div><div class="eyebrow">TODAY AT POORNIMA</div><h2 class="title">Metal Price</h2><div class="sub">Indicative display — contact showroom for today's exact rate.</div></div><a class="link" href="#contact">View details →</a></div>
+    <div class="rates">
+      <article class="rate"><div class="metal-icon">🪙</div><h3>Gold 24K · 999</h3><p>Today's rate</p><small>Call for live rate + GST</small></article>
+      <article class="rate"><div class="metal-icon">✨</div><h3>Gold 22K · 916</h3><p>Today's rate</p><small>Call for live rate + GST</small></article>
+      <article class="rate"><div class="metal-icon">🌿</div><h3>Gold 18K · 750</h3><p>Today's rate</p><small>Call for live rate + GST</small></article>
+      <article class="rate"><div class="metal-icon">🥈</div><h3>Silver · 999</h3><p>Today's rate</p><small>Call for live rate + GST</small></article>
+    </div>
+    <div class="tools">
+      <a class="tool" href="#contact"><div class="emoji">💰</div><strong>Gold Advance Booking</strong><span>Book, track & manage your plan.</span></a>
+      <a class="tool" href="#contact"><div class="emoji">🪙</div><strong>Silver Booking</strong><span>Save steadily for your next purchase.</span></a>
+      <a class="tool" href="#contact"><div class="emoji">🗓️</div><strong>Monthly Plan</strong><span>Explore jewellery savings options.</span></a>
+      <a class="tool" href="#contact"><div class="emoji">💼</div><strong>Advance Amount</strong><span>Enquire about your existing advance.</span></a>
+    </div>
+  </section>
+
+  <section class="section" id="selection"><div class="section-head"><div><div class="eyebrow">HANDPICKED FOR YOU</div><h2 class="title">Special Selection</h2><div class="sub">A curated edit from Poornima's collection.</div></div><a class="link" href="#new">View all →</a></div>
+    <div class="rail">
+      <article class="product"><button class="heart">♡</button><img src="images/001.jpg" alt="Emerald necklace"><div class="pbody"><small>Necklace</small><strong>Emerald Heritage Necklace</strong><div class="price">Price on request</div></div><span class="badge">FEATURED</span></article>
+      <article class="product"><button class="heart">♡</button><img src="images/008.jpg" alt="Emerald ring"><div class="pbody"><small>Ring</small><strong>Emerald Halo Ring</strong><div class="price">Price on request</div></div></article>
+      <article class="product"><button class="heart">♡</button><img src="images/006.jpg" alt="Jhumka earrings"><div class="pbody"><small>Earrings</small><strong>Classic Gold Jhumkas</strong><div class="price">Price on request</div></div></article>
+      <article class="product"><button class="heart">♡</button><img src="images/003.jpg" alt="Gold bangle"><div class="pbody"><small>Bangle</small><strong>Carved Gold Bangle</strong><div class="price">Price on request</div></div></article>
+    </div>
+  </section>
+
+  <section class="section" id="new"><div class="section-head"><div><div class="eyebrow">JUST IN</div><h2 class="title">New Arrivals</h2><div class="sub">Fresh pieces for your next occasion.</div></div><a class="link" href="#selection">Browse →</a></div>
+    <div class="rail">
+      <article class="product"><button class="heart">♡</button><img src="images/002.jpg" alt="Diamond earrings"><div class="pbody"><small>Diamond</small><strong>Petal Drop Earrings</strong><div class="price">Price on request</div></div><span class="badge">NEW</span></article>
+      <article class="product"><button class="heart">♡</button><img src="images/004.jpg" alt="Traditional pendant"><div class="pbody"><small>Gold</small><strong>Temple Pendant</strong><div class="price">Price on request</div></div><span class="badge">NEW</span></article>
+      <article class="product"><button class="heart">♡</button><img src="images/011.jpg" alt="Diamond pearl earrings"><div class="pbody"><small>Diamond</small><strong>Pearl Drop Earrings</strong><div class="price">Price on request</div></div></article>
+      <article class="product"><button class="heart">♡</button><img src="images/019.jpg" alt="Ruby ring"><div class="pbody"><small>Gold</small><strong>Ruby Signature Ring</strong><div class="price">Price on request</div></div></article>
+    </div>
+  </section>
+
+  <section class="section feature-grid">
+    <article class="feature"><img src="images/016.jpg" alt="Colour stone bangle"><div class="feature-copy"><div class="eyebrow">THE POORNIMA EDIT</div><h3>Colour that becomes a memory.</h3><p>Gem tones, classic gold and intricate detailing for celebrations big and small.</p><a class="primary" href="#contact">Enquire →</a></div></article>
+    <article class="feature"><img src="images/017.jpg" alt="Diamond drop earrings"><div class="feature-copy"><div class="eyebrow">DIAMOND EDIT</div><h3>Light, sparkle, forever.</h3><p>Elegant silhouettes designed to move from occasion to occasion.</p><a class="secondary" href="#contact">Find yours →</a></div></article>
+  </section>
+
+  <section class="section" id="contact"><div class="contact"><article class="contact-card"><div class="eyebrow">VISIT POORNIMA</div><h3>A showroom built around trust.</h3><p class="sub">Come in for a personal selection, custom discussion or simply a closer look at the pieces.</p><div class="contact-info"><div class="info"><small>SHOWROOM</small><p>#10, 1st Main Rd, Hosahalli Extension, Vijayanagar, Bengaluru, Karnataka 560104</p></div><div class="info"><small>SOCIAL</small><a href="https://www.instagram.com/popular/poornima-jewellers-vijayanagar/" target="_blank" rel="noreferrer">Instagram · Poornima Jewellers Vijayanagar</a></div></div></article>
+    <article class="contact-card"><div class="eyebrow">READY WHEN YOU ARE</div><h3>Start an enquiry.</h3><p class="sub">Ask about availability, design options, product details or showroom visits.</p><div class="btns" style="margin-top:18px"><a class="primary" href="mailto:hello@poornimajewellers.in?subject=Poornima%20Jewellers%20Enquiry">Email enquiry →</a><a class="secondary" href="https://www.google.com/maps/dir//Poornima+Jewellers,+1st+Main+Rd,+Hosahalli+Extension,+Vijayanagar,+Bengaluru,+Karnataka+560104/" target="_blank" rel="noreferrer">Get directions</a></div></article></div></section>
+
+<footer class="footer"><div class="shell">© 2026 Poornima Jewellers · Trusted in Vijayanagar, Bengaluru</div></footer>
+</div>
+</main>
+
+<a class="fab" href="#contact" aria-label="Contact Poornima">✦</a>
+<div class="drawer" id="drawer"><div class="drawer-panel"><button class="icon-btn" id="closeMenu">×</button><h2>Poornima</h2><div class="drawer-links"><a href="#home">Home</a><a href="#rates">Metal Price</a><a href="#selection">Special Selection</a><a href="#new">New Arrivals</a><a href="#contact">Showroom & Enquiry</a></div></div></div>
+<nav class="bottom"><a class="nav-item active" href="#home"><span>⌂</span><span>Home</span></a><a class="nav-item" href="#selection"><span>⌕</span><span>Search</span></a><a class="nav-item" href="#contact"><span>◌</span><span>Enquiry</span></a><a class="nav-item" href="#contact"><span>♙</span><span>Profile</span></a><a class="nav-item" href="#rates"><span>◫</span><span>More</span></a></nav>
+<div class="toast" id="toast"></div>
+<script>
+(function(){
+  const track=document.getElementById('heroTrack'), bullets=[...document.querySelectorAll('.bullet')]; let current=0;
+  function go(i){current=(i+3)%3; track.style.transform='translateX(-'+(current*100)+'%)'; bullets.forEach((b,n)=>b.classList.toggle('active',n===current));}
+  bullets.forEach((b,i)=>b.addEventListener('click',()=>go(i))); setInterval(()=>go(current+1),5200);
+  document.querySelectorAll('.heart').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();btn.classList.toggle('active');btn.textContent=btn.classList.contains('active')?'♥':'♡';show(btn.classList.contains('active')?'Added to wishlist':'Removed from wishlist')}));
+  const toast=document.getElementById('toast'); let toastTimer; function show(t){toast.textContent=t;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),1800)}
+  document.getElementById('notify').onclick=()=>show('Notifications will appear here.'); document.getElementById('wishlist').onclick=()=>show('Your wishlist is ready.'); document.getElementById('bag').onclick=()=>show('Enquiry bag is empty. Add pieces to enquire.');
+  document.getElementById('openMenu').onclick=()=>document.getElementById('drawer').classList.add('show');document.getElementById('closeMenu').onclick=()=>document.getElementById('drawer').classList.remove('show');document.getElementById('drawer').addEventListener('click',e=>{if(e.target.id==='drawer')document.getElementById('drawer').classList.remove('show')});
+  const search=document.getElementById('search'); search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll('.product').forEach(p=>{p.style.display=!q||p.innerText.toLowerCase().includes(q)?'block':'none'});});
+  document.querySelectorAll('.nav-item').forEach(a=>a.addEventListener('click',()=>{document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));a.classList.add('active')}));
+})();
+</script>
+</div>
+</body>
+</html>
